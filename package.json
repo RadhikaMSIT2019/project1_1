@@ -1,0 +1,15 @@
+{
+  "name": "pythonvirtualenvironments",
+  "version": "1.0.0",
+  "description": "project1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "app.py",
+    "index.html"
+  ],
+  "author": "Radhika",
+  "license": "ISC"
+}
