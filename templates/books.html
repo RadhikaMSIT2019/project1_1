@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+<br>
+<br>
+<table class="table">
+  <thead class="thead-primary">
+    <tr>
+      <th scope="col">ISBN</th>
+      <th scope="col">Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in row %}
+    <tr>
+      <td><a href="{{url_for('booksearch',isbn = r.isbn)}}">{{r.isbn}}</a></td>
+      <td><a href="{{url_for('booksearch',isbn = r.isbn)}}">{{r.title}}</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
