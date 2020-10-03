@@ -142,6 +142,7 @@ def registration():
             if name is not None and name.email == remail and name.pwrd == rpassword:
                 print('session created')
                 session['email'] = name.email
+                session['fname']=name.fname
                 user = name.email
                 # s = session['email']
                 return render_template('search.html', email=user)
