@@ -1,11 +1,16 @@
 
 {% extends "base.html" %}
-{% with messages = get_flashed_messages() %}
-         {% if messages %}
-            <ul>
-               {% for message in messages %}
-               <li>{{ message }}</li>
-               {% endfor %}
-            </ul>
-         {% endif %}
+{% with msg = get_flashed_messages() %}
+        {% if msg %}
+          {% for i in msg %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>{{i}}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+      {% endfor %}
+      {% endif %}
 {% endwith %}
+
+
