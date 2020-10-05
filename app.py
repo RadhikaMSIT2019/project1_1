@@ -87,15 +87,15 @@ class Reviews(Base):
 
 @app.route("/")
 def index2():
-    return render_template('base.html')
+    return redirect( url_for('home'))
 
 
 
-# @app.route("/home")
-# def userHome():
-#     if 'email' in session:
-#         return render_template('index.html', email=session['email'])
-#     return render_template('base.html', email=None)
+@app.route("/home")
+def home():
+    if 'email' in session:
+        return render_template('index.html', email=session['email'])
+    return render_template('base.html', email=None)
 
 
 
@@ -487,7 +487,7 @@ def login():
 @app.route("/login_form")
 def login_form():
     session.clear()
-    session.pop('email', None)
+    session.pop('email',None)
     return render_template('index.html',path='./static/css/style.css', email=None)
 
 @app.route("/main")
